@@ -2,6 +2,8 @@
 
 This repository contains a **highly-available (HA) AWS infrastructure** configuration using **Terraform**. It demonstrates a modular approach with separate modules for VPC, EC2, ALB, RDS, Security Groups and Monitoring.
 
+**On Terraform Apply you will be prompted to enter AWS Region, Environment name, CIDR Block**
+
 ## Project Structure
 ```
 │
@@ -77,3 +79,6 @@ This repository contains a **highly-available (HA) AWS infrastructure** configur
 - Terraform >= 1.5.x
 - AWS CLI configured with appropriate credentials
 - An AWS account with permissions for EC2, VPC, ELB, AutoScaling, IAM, S3
+
+## Getting started
+Go to the environments/dev directory and execute "terraform apply". You will be prompted to enter AWS Region, Environment name, CIDR Block. Normally it takes about 15 minutes to create all the resources. After it is done you could check the Prometheus and Grafana ports - go to EC2 instances on the AWS console, find the monitoring instance and it's public IP, then open it in your browser, using ports 9090 and 3000 respectively.
